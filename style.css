@@ -79,7 +79,7 @@ nav a:hover{
     background: 
         linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('banner-rrx.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     display: flex;
     justify-content: center;
