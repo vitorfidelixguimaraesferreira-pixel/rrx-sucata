@@ -77,7 +77,7 @@ nav a:hover{
 .banner{
     height: 100vh;
     background: 
-        linear-gradient(rgba(200,200,200,0.9), rgba(200,200,200,0.9)),
+        linear-gradient(rgba(200,200,200,0.4), rgba(200,200,200,0.4)),
         url('banner-rrx.png');
     background-size: contain;
     background-position: center;
