@@ -76,7 +76,9 @@ nav a:hover{
 /* BANNER */
 .banner{
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1974&auto=format&fit=crop');
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('img/banner-rrx.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -84,6 +86,7 @@ nav a:hover{
     align-items: center;
     position: relative;
 }
+
 
 .overlay{
     position: absolute;
