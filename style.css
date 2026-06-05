@@ -75,14 +75,11 @@ nav a:hover{
 
 /* BANNER */
 .banner{
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1974&auto=format&fit=crop');
-    background-size: cover;
+    background: url('logo-rrx.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+
 }
 
 .overlay{
