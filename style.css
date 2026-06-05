@@ -1,3 +1,7 @@
+/* =========================
+   RESET / BASE
+========================= */
+
 *{
     margin: 0;
     padding: 0;
@@ -15,15 +19,20 @@ body{
     padding-top: 90px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 header{
     width: 100%;
     padding: 20px 8%;
     background: rgba(20,20,20,0.88);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,11 +46,13 @@ header{
 
 .logo img{
     height: 60px;
+    border-radius: 10px;
 }
 
 .logo span{
     color: #00c853;
     font-weight: bold;
+    font-size: 22px;
 }
 
 /* MENU */
@@ -54,13 +65,30 @@ nav a{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-/* BANNER */
+nav a:hover{
+    color: #00c853;
+}
+
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* =========================
+   BANNER
+========================= */
+
 .banner{
     height: 100vh;
+    background-image: url("banner-rrx.png");
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: 100% 50%;
     position: relative;
-    background: url("banner-rrx.png") center/cover;
     overflow: hidden;
 }
 
@@ -68,26 +96,33 @@ nav a{
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.55);
+    z-index: 1;
 }
 
-/* ANIMAÇÃO */
+/* =========================
+   ANIMAÇÃO RECICLAGEM
+========================= */
+
 .animacao-reciclagem{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 2;
 }
 
+/* LATA */
 .sucata{
     font-size: 60px;
     animation: desce 3s forwards;
 }
 
+/* LINHA */
 .caminho{
     width: 4px;
     height: 180px;
-    margin: 10px auto;
+    margin: 15px auto;
     background: repeating-linear-gradient(
         to bottom,
         white 0px,
@@ -98,6 +133,7 @@ nav a{
     animation: fade 3s forwards;
 }
 
+/* RECICLAGEM */
 .reciclagem{
     font-size: 80px;
     opacity: 0;
@@ -105,66 +141,201 @@ nav a{
     animation-delay: 3s;
 }
 
+/* TEXTO FINAL */
 .animacao-reciclagem h2{
-    margin-top: 15px;
+    margin-top: 20px;
+    font-size: 22px;
     opacity: 0;
     animation: aparecer 1.5s forwards;
     animation-delay: 4s;
 }
 
-/* CONTEÚDO */
+/* ANIMAÇÕES */
+@keyframes desce{
+    to{
+        transform: translateY(220px);
+        opacity: 0;
+    }
+}
+
+@keyframes fade{
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer{
+    to{
+        opacity: 1;
+    }
+}
+
+/* =========================
+   CONTEÚDO BANNER
+========================= */
+
 .conteudo-banner{
     position: relative;
     text-align: center;
     padding: 20px;
-    z-index: 2;
+    z-index: 3;
     margin-top: 120px;
 }
 
-.botao-whatsapp{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 25px;
-    background: #00c853;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
+.conteudo-banner h1{
+    font-size: 52px;
+    margin-bottom: 20px;
 }
 
-/* CONSCIÊNCIA */
+.conteudo-banner p{
+    font-size: 20px;
+    color: #ededed;
+}
+
+/* BOTÃO */
+.botao-whatsapp{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 16px 28px;
+    background: #00c853;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   CONSCIÊNCIA
+========================= */
+
 .consciencia{
     padding: 100px 8%;
-    text-align: center;
     background: #222;
+    text-align: center;
 }
 
 .consciencia h2{
     color: #00c853;
     margin-bottom: 20px;
+    font-size: 36px;
 }
 
-/* SERVIÇOS */
+.consciencia p{
+    font-size: 18px;
+    line-height: 1.8;
+    color: #eaeaea;
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+
 .servicos{
     padding: 100px 8%;
     background: #202020;
+    text-align: center;
+    position: relative;
+}
+
+.servicos h2{
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #00c853;
 }
 
 .cards-container{
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card{
     background: #2d2d2d;
     padding: 30px;
     border-radius: 15px;
-    flex: 1;
+    width: 350px;
 }
 
-/* FOOTER */
+/* =========================
+   SEÇÕES GERAIS
+========================= */
+
+.sobre,
+.contato{
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.sobre h2,
+.contato h2{
+    color: #00c853;
+    margin-bottom: 20px;
+}
+
+/* CONTATO BOTÕES */
+.contato-botoes{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contato-btn{
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     background: #181818;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        display: none;
+    }
+
+    nav.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #222;
+        padding: 20px;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .conteudo-banner h1{
+        font-size: 32px;
+    }
+
+    .conteudo-banner p{
+        font-size: 18px;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .consciencia p{
+        font-size: 16px;
+    }
 }
