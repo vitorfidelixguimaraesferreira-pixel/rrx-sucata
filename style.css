@@ -1,7 +1,3 @@
-/* =========================
-   RESET / BASE
-========================= */
-
 *{
     margin: 0;
     padding: 0;
@@ -14,28 +10,23 @@ html{
 }
 
 body{
-    background: #1a1a1a;
+    background-color: #1a1a1a;
     color: white;
     padding-top: 90px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header{
     width: 100%;
     padding: 20px 8%;
-    background: rgba(20,20,20,0.88);
-    backdrop-filter: blur(10px);
+    background-color: rgba(20,20,20,0.88);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo{
@@ -46,13 +37,11 @@ header{
 
 .logo img{
     height: 60px;
-    border-radius: 10px;
 }
 
 .logo span{
     color: #00c853;
     font-weight: bold;
-    font-size: 22px;
 }
 
 /* MENU */
@@ -64,278 +53,128 @@ nav{
 nav a{
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover{
     color: #00c853;
 }
 
-.menu-toggle{
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* =========================
-   BANNER
-========================= */
-
+/* BANNER */
 .banner{
     height: 100vh;
-    background-image: url("banner-rrx.png");
-    background-position: center top;
-    background-repeat: repeat-y;
-    background-size: 100% 50%;
     position: relative;
-    overflow: hidden;
+    background-image: url('banner-rrx.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .overlay{
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.55);
-    z-index: 1;
 }
-
-/* =========================
-   ANIMAÇÃO RECICLAGEM
-========================= */
-
-.animacao-reciclagem{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-/* LATA */
-.sucata{
-    font-size: 60px;
-    animation: desce 3s forwards;
-}
-
-/* LINHA */
-.caminho{
-    width: 4px;
-    height: 180px;
-    margin: 15px auto;
-    background: repeating-linear-gradient(
-        to bottom,
-        white 0px,
-        white 10px,
-        transparent 10px,
-        transparent 20px
-    );
-    animation: fade 3s forwards;
-}
-
-/* RECICLAGEM */
-.reciclagem{
-    font-size: 80px;
-    opacity: 0;
-    animation: aparecer 1.5s forwards;
-    animation-delay: 3s;
-}
-
-/* TEXTO FINAL */
-.animacao-reciclagem h2{
-    margin-top: 20px;
-    font-size: 22px;
-    opacity: 0;
-    animation: aparecer 1.5s forwards;
-    animation-delay: 4s;
-}
-
-/* ANIMAÇÕES */
-@keyframes desce{
-    to{
-        transform: translateY(220px);
-        opacity: 0;
-    }
-}
-
-@keyframes fade{
-    to{
-        opacity: 0;
-    }
-}
-
-@keyframes aparecer{
-    to{
-        opacity: 1;
-    }
-}
-
-/* =========================
-   CONTEÚDO BANNER
-========================= */
 
 .conteudo-banner{
     position: relative;
-    text-align: center;
-    padding: 20px;
     z-index: 3;
-    margin-top: 120px;
+    text-align: center;
+    padding-top: 150px;
 }
 
-.conteudo-banner h1{
-    font-size: 52px;
-    margin-bottom: 20px;
-}
-
-.conteudo-banner p{
-    font-size: 20px;
-    color: #ededed;
-}
-
-/* BOTÃO */
 .botao-whatsapp{
     display: inline-block;
-    margin-top: 25px;
-    padding: 16px 28px;
+    margin-top: 20px;
+    padding: 15px 25px;
     background: #00c853;
-    color: white;
     border-radius: 50px;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* =========================
-   CONSCIÊNCIA
-========================= */
-
-.consciencia{
-    padding: 100px 8%;
-    background: #222;
+/* ANIMAÇÃO SIMPLES E ESTÁVEL */
+.animacao-reciclagem{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.consciencia h2{
-    color: #00c853;
-    margin-bottom: 20px;
-    font-size: 36px;
+.sucata{
+    font-size: 50px;
 }
 
-.consciencia p{
-    font-size: 18px;
-    line-height: 1.8;
-    color: #eaeaea;
+.caminho{
+    width: 4px;
+    height: 120px;
+    background: white;
+    margin: 10px auto;
 }
 
-/* =========================
-   SERVIÇOS
-========================= */
+.reciclagem{
+    font-size: 60px;
+}
 
+/* SERVIÇOS */
 .servicos{
     padding: 100px 8%;
-    background: #202020;
     text-align: center;
-    position: relative;
-}
-
-.servicos h2{
-    font-size: 40px;
-    margin-bottom: 50px;
-    color: #00c853;
 }
 
 .cards-container{
     display: flex;
-    gap: 25px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .card{
-    background: #2d2d2d;
-    padding: 30px;
+    background: #2a2a2a;
+    padding: 25px;
+    width: 300px;
     border-radius: 15px;
-    width: 350px;
 }
 
-/* =========================
-   SEÇÕES GERAIS
-========================= */
+/* CONTEÚDOS */
+.materiais-conteudo,
+.servicos-conteudo{
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s;
+}
 
+.materiais-conteudo.ativo,
+.servicos-conteudo.ativo{
+    max-height: 500px;
+}
+
+/* SEÇÕES */
 .sobre,
+.consciencia,
 .contato{
-    padding: 100px 8%;
-    text-align: center;
+    padding: 80px 8%;
 }
 
-.sobre h2,
-.contato h2{
-    color: #00c853;
-    margin-bottom: 20px;
-}
-
-/* CONTATO BOTÕES */
-.contato-botoes{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.contato-btn{
-    padding: 15px 25px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
     text-align: center;
-    padding: 50px;
-    background: #181818;
+    padding: 40px;
+    background: #111;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-
+/* RESPONSIVO */
 @media(max-width:768px){
-
     nav{
         display: none;
-    }
-
-    nav.active{
-        display: flex;
-        flex-direction: column;
         position: absolute;
         top: 80px;
         right: 0;
+        flex-direction: column;
         background: #222;
         padding: 20px;
     }
 
-    .menu-toggle{
-        display: block;
-    }
-
-    .conteudo-banner h1{
-        font-size: 32px;
-    }
-
-    .conteudo-banner p{
-        font-size: 18px;
-    }
-
-    .card{
-        width: 100%;
-    }
-
-    .consciencia p{
-        font-size: 16px;
+    nav.active{
+        display: flex;
     }
 }
