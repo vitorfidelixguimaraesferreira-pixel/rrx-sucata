@@ -138,9 +138,81 @@ nav a:hover{
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
-    width: 100%;
 }
 
+/* LATA (desce e some) */
+.sucata{
+    font-size: 60px;
+    opacity: 0;
+    animation: lataDesce 3s ease forwards;
+}
+
+/* CAMINHO (vai apagando junto) */
+.caminho{
+    width: 4px;
+    height: 180px;
+    margin: 15px auto;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    animation: linhaApaga 3s ease forwards;
+}
+
+/* RECICLAGEM (aparece depois) */
+.reciclagem{
+    font-size: 80px;
+    opacity: 0;
+    animation: aparecer 1.5s ease forwards;
+    animation-delay: 3s;
+}
+
+/* TEXTO FINAL */
+.animacao-reciclagem h2{
+    margin-top: 20px;
+    font-size: 22px;
+    opacity: 0;
+    animation: aparecer 1.5s ease forwards;
+    animation-delay: 4.5s;
+}
+
+/* ANIMAÇÕES */
+@keyframes lataDesce{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(220px);
+        opacity: 0;
+    }
+}
+
+@keyframes linhaApaga{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.1;
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 .sucata{
     font-size: 32px;
     font-weight: bold;
