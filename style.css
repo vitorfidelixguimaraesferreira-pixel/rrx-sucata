@@ -76,7 +76,7 @@ nav a:hover{
 /* BANNER */
 .banner{
     height: 100vh;
-    background-image: url('Banner-rrx.png');
+    background-image: url('banner-rrx.png');
     background-repeat: repeat-y;
     background-position: center;
     background-size: 100% auto;
