@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html{
@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    background: #1a1a1a;
+    background-color: #1a1a1a;
     color: white;
     padding-top: 90px;
 }
@@ -19,7 +19,6 @@ body{
 header{
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -30,8 +29,8 @@ header{
 
 .logo{
     display: flex;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
 }
 
 .logo img{
@@ -46,10 +45,6 @@ nav{
 nav a{
     color: white;
     text-decoration: none;
-}
-
-.menu-toggle{
-    display: none;
 }
 
 /* BANNER */
@@ -75,11 +70,13 @@ nav a{
     text-align: center;
 }
 
+/* LATA */
 .sucata{
-    font-size: 50px;
-    animation: desce 3s forwards;
+    font-size: 55px;
+    animation: lata 3s forwards;
 }
 
+/* LINHA */
 .caminho{
     width: 4px;
     height: 180px;
@@ -89,34 +86,51 @@ nav a{
         white 0 10px,
         transparent 10px 20px
     );
-    animation: fade 3s forwards;
+    animation: linha 3s forwards;
 }
 
+/* RECICLAGEM */
 .reciclagem{
     font-size: 70px;
     opacity: 0;
-    animation: aparecer 1s forwards;
+    animation: aparecer 1.5s forwards;
     animation-delay: 3s;
 }
 
+/* TEXTO FINAL */
 .animacao-reciclagem h2{
     margin-top: 10px;
     opacity: 0;
-    animation: aparecer 1s forwards;
-    animation-delay: 4s;
+    animation: aparecer 2s forwards;
+    animation-delay: 4.5s;
 }
 
 /* ANIMAÇÕES */
-@keyframes desce{
-    to{ transform: translateY(200px); opacity: 0; }
+@keyframes lata{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(220px);
+        opacity: 0;
+    }
 }
 
-@keyframes fade{
-    to{ opacity: 0.2; }
+@keyframes linha{
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
 }
 
 @keyframes aparecer{
-    to{ opacity: 1; }
+    from{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* CONTEÚDO */
@@ -132,25 +146,4 @@ nav a{
     padding: 15px 25px;
     background: green;
     border-radius: 30px;
-}
-
-/* RESPONSIVO */
-@media(max-width:768px){
-    nav{
-        display: none;
-    }
-
-    nav.active{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #222;
-        padding: 20px;
-    }
-
-    .menu-toggle{
-        display: block;
-    }
 }
