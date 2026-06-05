@@ -9,6 +9,7 @@
 
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">
         <img src="logorrx.png" alt="RRX SUCATA">
@@ -27,10 +28,11 @@
 </header>
 
 <!-- BANNER -->
-<section class="banner" id="inicio">
+<section id="inicio" class="banner">
 
     <div class="overlay"></div>
 
+    <!-- ANIMAÇÃO -->
     <div class="animacao-reciclagem">
         <div class="sucata">🥫</div>
         <div class="caminho"></div>
@@ -57,14 +59,29 @@
 
     <div class="cards-container">
 
-        <div class="card">
-            <h3>Materiais</h3>
-            <p>Compra de cobre, alumínio, ferro e inox</p>
+        <div class="card materiais-card">
+            <h3 onclick="toggleMateriais()">Materiais que Compramos</h3>
+
+            <div id="materiais" class="materiais-conteudo">
+                <ul>
+                    <li>Cobre</li>
+                    <li>Alumínio</li>
+                    <li>Ferro</li>
+                    <li>Inox</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Serviços</h3>
-            <p>Coleta, retirada e logística de sucata</p>
+        <div class="card servicos-card">
+            <h3 onclick="toggleServicos()">Serviços Prestados</h3>
+
+            <div id="servicosLista" class="servicos-conteudo">
+                <ul>
+                    <li>Coleta de sucata</li>
+                    <li>Retirada em empresas</li>
+                    <li>Logística de materiais</li>
+                </ul>
+            </div>
         </div>
 
     </div>
@@ -73,18 +90,23 @@
 <!-- SOBRE -->
 <section id="sobre" class="sobre">
     <h2>Sobre a RRX</h2>
-    <p>Empresa especializada em reciclagem e reaproveitamento de materiais.</p>
+    <p>Empresa especializada em reciclagem e reaproveitamento de materiais em São Paulo.</p>
 </section>
 
 <!-- CONSCIÊNCIA -->
 <section id="consciencia" class="consciencia">
     <h2>Consciência Ambiental</h2>
-    <p>Reciclar é preservar o futuro e reduzir impactos ambientais.</p>
+    <p>Reciclar reduz impacto ambiental e ajuda a construir um futuro melhor.</p>
 </section>
 
 <!-- CONTATO -->
 <section id="contato" class="contato">
     <h2>Contato</h2>
+
+    <div class="contato-botoes">
+        <a class="contato-btn" href="https://wa.me/5511947265181">WhatsApp</a>
+        <a class="contato-btn" href="#">Instagram</a>
+    </div>
 </section>
 
 <footer>
@@ -95,6 +117,14 @@
 <script>
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("active");
+}
+
+function toggleMateriais(){
+    document.getElementById("materiais").classList.toggle("ativo");
+}
+
+function toggleServicos(){
+    document.getElementById("servicosLista").classList.toggle("ativo");
 }
 </script>
 
