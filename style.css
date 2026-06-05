@@ -15,10 +15,7 @@ body{
     padding-top: 90px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header{
     width: 100%;
     padding: 20px 8%;
@@ -74,10 +71,7 @@ nav a:hover{
     cursor: pointer;
 }
 
-/* =========================
-   BANNER
-========================= */
-
+/* BANNER */
 .banner{
     height: 100vh;
     background-image: url('banner-rrx.png');
@@ -95,13 +89,72 @@ nav a:hover{
     z-index: 1;
 }
 
+/* ANIMAÇÃO */
+.animacao-reciclagem{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.sucata{
+    font-size: 50px;
+    animation: descer 3s ease forwards;
+}
+
+.caminho{
+    width: 4px;
+    height: 180px;
+    margin: 15px auto;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    animation: sumir 3s forwards;
+}
+
+.reciclagem{
+    font-size: 80px;
+    opacity: 0;
+    animation: aparecer 1.5s ease forwards;
+    animation-delay: 3s;
+}
+
+.animacao-reciclagem h2{
+    margin-top: 20px;
+    font-size: 22px;
+    opacity: 0;
+    animation: aparecer 1.5s ease forwards;
+    animation-delay: 4s;
+}
+
+/* KEYFRAMES */
+@keyframes descer{
+    0%{transform: translateY(0); opacity:1;}
+    100%{transform: translateY(200px); opacity:0;}
+}
+
+@keyframes sumir{
+    to{opacity:0;}
+}
+
+@keyframes aparecer{
+    from{opacity:0; transform:scale(0.8);}
+    to{opacity:1; transform:scale(1);}
+}
+
+/* CONTEÚDO */
 .conteudo-banner{
     position: relative;
+    z-index: 3;
     text-align: center;
     padding: 20px;
-    z-index: 3;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 40%;
 }
 
 .conteudo-banner h1{
@@ -123,122 +176,13 @@ nav a:hover{
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(0,200,83,0.5);
 }
 
-.botao-whatsapp:hover{
-    transform: scale(1.05);
-}
-
-/* =========================
-   ANIMAÇÃO RECICLAGEM (FINAL LIMPA)
-========================= */
-
-.animacao-reciclagem{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-/* LATA */
-.sucata{
-    font-size: 50px;
-    opacity: 1;
-    animation: lata 4s ease forwards;
-}
-
-/* LINHA */
-.caminho{
-    width: 4px;
-    height: 180px;
-    margin: 15px auto;
-    background: repeating-linear-gradient(
-        to bottom,
-        white 0px,
-        white 10px,
-        transparent 10px,
-        transparent 20px
-    );
-    animation: linha 4s ease forwards;
-}
-
-/* RECICLAGEM */
-.reciclagem{
-    font-size: 80px;
-    opacity: 0;
-    animation: aparecer 1.5s ease forwards;
-    animation-delay: 4s;
-}
-
-/* TEXTO FINAL */
-.animacao-reciclagem h2{
-    margin-top: 20px;
-    font-size: 22px;
-    opacity: 0;
-    animation: aparecer 1.5s ease forwards;
-    animation-delay: 5.5s;
-}
-
-/* ANIMAÇÕES */
-@keyframes lata{
-    0%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100%{
-        transform: translateY(250px);
-        opacity: 0;
-    }
-}
-
-@keyframes linha{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* =========================
-   SERVIÇOS
-========================= */
-
+/* SERVIÇOS */
 .servicos{
     padding: 100px 8%;
     text-align: center;
     background: #202020;
-    position: relative;
-}
-
-.servicos::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("logorrx.png") center/500px no-repeat;
-    opacity: 0.06;
-}
-
-.servicos h2{
-    font-size: 40px;
-    margin-bottom: 50px;
-    color: #00c853;
-    position: relative;
 }
 
 .cards-container{
@@ -253,34 +197,13 @@ nav a:hover{
     padding: 35px;
     border-radius: 20px;
     width: 350px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-/* SEÇÕES */
-.sobre,
-.consciencia,
-.contato{
-    padding: 100px 8%;
-}
-
-.sobre-texto,
-.consciencia-container,
-.contato-container{
-    max-width: 900px;
-    margin: auto;
-}
-
-h2{
-    color: #00c853;
-    margin-bottom: 20px;
 }
 
 /* CONTATO */
 .contato-botoes{
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .contato-btn{
@@ -291,63 +214,9 @@ h2{
     text-decoration: none;
 }
 
-.contato-btn:hover{
-    background: #00c853;
-}
-
 /* FOOTER */
 footer{
     text-align: center;
     padding: 50px;
     background: #181818;
-}
-
-/* WHATSAPP FIXO */
-.whatsapp-fixo{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #00c853;
-    padding: 15px 22px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-}
-
-/* RESPONSIVO */
-@media(max-width:768px){
-
-    nav{
-        display: none;
-    }
-
-    nav.active{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: #222;
-        padding: 20px;
-    }
-
-    .menu-toggle{
-        display: block;
-    }
-
-    .conteudo-banner h1{
-        font-size: 32px;
-    }
-
-    .conteudo-banner p{
-        font-size: 18px;
-    }
-
-    .card{
-        width: 100%;
-    }
-
-    .contato-botoes{
-        flex-direction: column;
-    }
 }
