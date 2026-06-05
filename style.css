@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    background-color: #1a1a1a;
+    background: #1a1a1a;
     color: white;
     padding-top: 90px;
 }
@@ -19,15 +19,14 @@ body{
 header{
     width: 100%;
     padding: 20px 8%;
-    background-color: rgba(20,20,20,0.88);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: rgba(20,20,20,0.88);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
@@ -38,15 +37,14 @@ header{
 
 .logo img{
     height: 60px;
-    border-radius: 10px;
 }
 
 .logo span{
     color: #00c853;
     font-weight: bold;
-    font-size: 22px;
 }
 
+/* MENU */
 nav{
     display: flex;
     gap: 25px;
@@ -58,18 +56,11 @@ nav a{
     font-weight: bold;
 }
 
-.menu-toggle{
-    display: none;
-}
-
 /* BANNER */
 .banner{
     height: 100vh;
-    background-image: url('banner-rrx.png');
-    background-position: center top;
-    background-repeat: repeat-y;
-    background-size: 100% 50%;
     position: relative;
+    background: url("banner-rrx.png") center/cover;
     overflow: hidden;
 }
 
@@ -86,7 +77,6 @@ nav a{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2;
 }
 
 .sucata{
@@ -97,7 +87,7 @@ nav a{
 .caminho{
     width: 4px;
     height: 180px;
-    margin: 15px auto;
+    margin: 10px auto;
     background: repeating-linear-gradient(
         to bottom,
         white 0px,
@@ -116,28 +106,65 @@ nav a{
 }
 
 .animacao-reciclagem h2{
-    margin-top: 20px;
+    margin-top: 15px;
     opacity: 0;
     animation: aparecer 1.5s forwards;
     animation-delay: 4s;
 }
 
-/* KEYFRAMES */
-@keyframes desce{
-    to{
-        transform: translateY(200px);
-        opacity: 0;
-    }
+/* CONTEÚDO */
+.conteudo-banner{
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    margin-top: 120px;
 }
 
-@keyframes fade{
-    to{
-        opacity: 0;
-    }
+.botao-whatsapp{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background: #00c853;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
 }
 
-@keyframes aparecer{
-    to{
-        opacity: 1;
-    }
+/* CONSCIÊNCIA */
+.consciencia{
+    padding: 100px 8%;
+    text-align: center;
+    background: #222;
+}
+
+.consciencia h2{
+    color: #00c853;
+    margin-bottom: 20px;
+}
+
+/* SERVIÇOS */
+.servicos{
+    padding: 100px 8%;
+    background: #202020;
+}
+
+.cards-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: #2d2d2d;
+    padding: 30px;
+    border-radius: 15px;
+    flex: 1;
+}
+
+/* FOOTER */
+footer{
+    text-align: center;
+    padding: 40px;
+    background: #181818;
 }
