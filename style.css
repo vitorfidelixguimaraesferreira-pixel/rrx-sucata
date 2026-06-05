@@ -86,18 +86,17 @@ nav a{
     text-decoration:none;
 }
 
-/* ANIMAÇÃO LIMPA (SEM BUG GITHUB) */
+/* ANIMAÇÃO LIMPA */
 .animacao-reciclagem{
     position:absolute;
     top:35%;
     left:50%;
-    transform:translate(-50%, -50%);
+    transform:translate(-50%,-50%);
     text-align:center;
 }
 
 .sucata{
     font-size:55px;
-    animation:fadeOut 2s ease forwards;
 }
 
 .caminho{
@@ -109,34 +108,58 @@ nav a{
         white 0 10px,
         transparent 10px 20px
     );
-    animation:fadeOut 2s ease forwards;
 }
 
 .reciclagem{
     font-size:60px;
-    opacity:0;
-    animation:fadeIn 2s ease 2s forwards;
-}
-
-.animacao-reciclagem h2{
-    margin-top:10px;
-    font-size:18px;
-    opacity:0;
-    animation:fadeIn 2s ease 3s forwards;
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeOut{
-    to{opacity:0;}
-}
-
-@keyframes fadeIn{
-    to{opacity:1;}
 }
 
 /* SEÇÕES */
 section{
     padding:80px 20px;
+}
+
+/* CARDS */
+.cards-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#222;
+    padding:25px;
+    width:300px;
+    border-radius:15px;
+}
+
+/* EXPAND */
+.materiais-conteudo,
+.servicos-conteudo{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.materiais-conteudo.ativo,
+.servicos-conteudo.ativo{
+    max-height:500px;
+}
+
+/* CONTATO */
+.contato-botoes{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+}
+
+.contato-btn{
+    padding:12px 20px;
+    background:#333;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
 }
 
 /* FOOTER */
@@ -148,7 +171,6 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
-
     nav{
         display:none;
         position:absolute;
@@ -163,7 +185,8 @@ footer{
         display:flex;
     }
 
-    .conteudo-banner h1{
-        font-size:28px;
+    .cards-container{
+        flex-direction:column;
+        align-items:center;
     }
 }
