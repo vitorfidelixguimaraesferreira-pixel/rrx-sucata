@@ -15,10 +15,7 @@ body{
     padding-top: 90px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header{
     width: 100%;
     padding: 20px 8%;
@@ -43,6 +40,7 @@ header{
 .logo img{
     height: 60px;
     border-radius: 10px;
+    filter: drop-shadow(0 0 8px rgba(0,200,83,0.4));
 }
 
 .logo span{
@@ -79,11 +77,21 @@ nav a:hover{
 
 .banner{
     height: 100vh;
+    background-image: url('banner-rrx.png');
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: 100% 50%;
     position: relative;
-    background: url("banner-rrx.png") center/cover;
     overflow: hidden;
 }
 
+/* 🔥 CORREÇÃO IMPORTANTE */
+.banner{
+    position: relative;
+    overflow: hidden;
+}
+
+/* overlay */
 .overlay{
     position: absolute;
     inset: 0;
@@ -91,56 +99,11 @@ nav a:hover{
     z-index: 1;
 }
 
-/* ANIMAÇÃO */
-.animacao-reciclagem{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-/* LATA */
-.sucata{
-    font-size: 55px;
-    animation: lata 3s forwards;
-}
-
-/* LINHA */
-.caminho{
-    width: 4px;
-    height: 180px;
-    margin: 10px auto;
-    background: repeating-linear-gradient(
-        to bottom,
-        white 0 10px,
-        transparent 10px 20px
-    );
-    animation: linha 3s forwards;
-}
-
-/* RECICLAGEM */
-.reciclagem{
-    font-size: 70px;
-    opacity: 0;
-    animation: aparecer 1.5s forwards;
-    animation-delay: 3s;
-}
-
-/* TEXTO FINAL */
-.animacao-reciclagem h2{
-    margin-top: 10px;
-    opacity: 0;
-    animation: aparecer 2s forwards;
-    animation-delay: 4.5s;
-}
-
-/* TEXTO PRINCIPAL */
+/* conteúdo do banner */
 .conteudo-banner{
     position: relative;
     text-align: center;
-    margin-top: 120px;
+    padding: 20px;
     z-index: 3;
 }
 
@@ -154,7 +117,7 @@ nav a:hover{
     color: #ededed;
 }
 
-/* BOTÃO */
+/* botão */
 .botao-whatsapp{
     display: inline-block;
     margin-top: 30px;
@@ -165,12 +128,101 @@ nav a:hover{
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
-    position: relative;
-    z-index: 10;
+    box-shadow: 0 0 15px rgba(0,200,83,0.5);
 }
 
 .botao-whatsapp:hover{
     transform: scale(1.05);
+}
+
+/* =========================
+   ANIMAÇÃO RECICLAGEM (CORRIGIDA)
+========================= */
+
+.animacao-reciclagem{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* LATA */
+.sucata{
+    font-size: 50px;
+    opacity: 0;
+    animation: lata 4s ease forwards;
+}
+
+/* LINHA */
+.caminho{
+    width: 4px;
+    height: 180px;
+    margin: 15px auto;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    animation: linha 4s ease forwards;
+}
+
+/* RECICLAGEM */
+.reciclagem{
+    font-size: 80px;
+    opacity: 0;
+    animation: aparecer 1.5s ease forwards;
+    animation-delay: 4s;
+}
+
+/* TEXTO FINAL */
+.animacao-reciclagem h2{
+    margin-top: 20px;
+    font-size: 22px;
+    opacity: 0;
+    animation: aparecer 1.5s ease forwards;
+    animation-delay: 5.5s;
+}
+
+/* ANIMAÇÕES */
+@keyframes lata{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(250px);
+        opacity: 0;
+    }
+}
+
+@keyframes linha{
+    0%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 0.4;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* =========================
@@ -204,6 +256,7 @@ nav a:hover{
     gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .card{
@@ -219,10 +272,37 @@ nav a:hover{
     transform: translateY(-8px);
 }
 
-/* =========================
-   SEÇÕES
-========================= */
+.materiais-conteudo,
+.servicos-conteudo{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 10px;
+}
 
+.materiais-conteudo.ativo,
+.servicos-conteudo.ativo{
+    max-height: 2000px;
+    padding: 10px;
+}
+
+.categoria-material{
+    background: rgba(255,255,255,0.05);
+    margin-bottom: 12px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.categoria-material h4{
+    color: #00c853;
+}
+
+.lista-material{
+    margin-top: 8px;
+    padding-left: 15px;
+}
+
+/* SEÇÕES */
 .sobre,
 .consciencia,
 .contato{
@@ -257,17 +337,13 @@ nav a:hover{
     border-radius: 10px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .contato-btn:hover{
     background: #00c853;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
     text-align: center;
     padding: 50px;
@@ -275,41 +351,23 @@ footer{
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* =========================
-   ANIMAÇÕES
-========================= */
-
-@keyframes lata{
-    from{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to{
-        transform: translateY(220px);
-        opacity: 0;
-    }
+footer h2{
+    color: #00c853;
 }
 
-@keyframes linha{
-    from{ opacity: 1; }
-    to{ opacity: 0; }
+/* WHATSAPP FIXO */
+.whatsapp-fixo{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00c853;
+    padding: 15px 22px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
 }
 
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
-
+/* RESPONSIVO */
 @media(max-width:768px){
 
     nav{
