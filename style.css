@@ -17,14 +17,18 @@ body{
 
 /* HEADER */
 header{
-    position: fixed;
-    top: 0;
     width: 100%;
+    padding: 20px 8%;
+    background-color: rgba(20,20,20,0.88);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
-    padding: 20px 8%;
-    background: rgba(20,20,20,0.9);
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo{
@@ -34,12 +38,19 @@ header{
 }
 
 .logo img{
-    height: 55px;
+    height: 60px;
+    border-radius: 10px;
 }
 
+.logo span{
+    color: #00c853;
+    font-weight: bold;
+}
+
+/* MENU */
 nav{
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav a{
@@ -47,7 +58,14 @@ nav a{
     text-decoration: none;
 }
 
-/* BANNER */
+.menu-toggle{
+    display: none;
+}
+
+/* =========================
+   BANNER
+========================= */
+
 .banner{
     height: 100vh;
     position: relative;
@@ -59,6 +77,7 @@ nav a{
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.55);
+    z-index: 1;
 }
 
 /* ANIMAÇÃO */
@@ -68,15 +87,14 @@ nav a{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 2;
 }
 
-/* LATA */
 .sucata{
     font-size: 55px;
     animation: lata 3s forwards;
 }
 
-/* LINHA */
 .caminho{
     width: 4px;
     height: 180px;
@@ -89,7 +107,6 @@ nav a{
     animation: linha 3s forwards;
 }
 
-/* RECICLAGEM */
 .reciclagem{
     font-size: 70px;
     opacity: 0;
@@ -97,7 +114,6 @@ nav a{
     animation-delay: 3s;
 }
 
-/* TEXTO FINAL */
 .animacao-reciclagem h2{
     margin-top: 10px;
     opacity: 0;
@@ -105,45 +121,63 @@ nav a{
     animation-delay: 4.5s;
 }
 
-/* ANIMAÇÕES */
-@keyframes lata{
-    0%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100%{
-        transform: translateY(220px);
-        opacity: 0;
-    }
-}
-
-@keyframes linha{
-    0%{ opacity: 1; }
-    100%{ opacity: 0; }
-}
-
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* CONTEÚDO */
+/* TEXTO PRINCIPAL */
 .conteudo-banner{
     position: relative;
     text-align: center;
     margin-top: 120px;
+    z-index: 3;
 }
 
+.conteudo-banner h1{
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.conteudo-banner p{
+    font-size: 20px;
+    color: #ededed;
+}
+
+/* BOTÃO CORRIGIDO */
 .botao-whatsapp{
     display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    background: green;
-    border-radius: 30px;
+    margin-top: 30px;
+    padding: 16px 28px;
+    background: #00c853;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+
+    position: relative;
+    z-index: 10;
+}
+
+.botao-whatsapp:hover{
+    transform: scale(1.05);
+}
+
+/* ANIMAÇÕES */
+@keyframes lata{
+    from{ transform: translateY(0); opacity: 1; }
+    to{ transform: translateY(220px); opacity: 0; }
+}
+
+@keyframes linha{
+    from{ opacity: 1; }
+    to{ opacity: 0; }
+}
+
+@keyframes aparecer{
+    from{ opacity: 0; transform: scale(0.7); }
+    to{ opacity: 1; transform: scale(1); }
+}
+
+/* RESTO */
+footer{
+    text-align: center;
+    padding: 50px;
+    background: #181818;
 }
