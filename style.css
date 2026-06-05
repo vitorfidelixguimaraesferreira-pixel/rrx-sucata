@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -6,360 +5,159 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body{
-    background-color: #1a1a1a;
+    background: #1a1a1a;
     color: white;
     padding-top: 90px;
 }
 
 /* HEADER */
 header{
-    width: 100%;
-    padding: 20px 8%;
-    background-color: rgba(20,20,20,0.88);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 8%;
+    background: rgba(20,20,20,0.9);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo{
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
 }
 
 .logo img{
     height: 60px;
-    border-radius: 10px;
-    filter: drop-shadow(0 0 8px rgba(0,200,83,0.4));
 }
 
 .logo span{
     color: #00c853;
     font-weight: bold;
-    font-size: 22px;
 }
 
+/* MENU */
 nav{
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 nav a{
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover{
-    color: #00c853;
-}
-
-.menu-toggle{
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
 }
 
 /* BANNER */
 .banner{
     height: 100vh;
-    background-image: url('banner-rrx.png');
-    background-position: center top;
-    background-repeat: repeat-y;
-    background-size: 100% 50%;
     position: relative;
-    overflow: hidden;
+    background: url('banner-rrx.png') center/cover;
 }
 
-/* overlay */
 .overlay{
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 1;
+    background: rgba(0,0,0,0.6);
 }
 
-/* conteúdo do banner */
 .conteudo-banner{
     position: relative;
     text-align: center;
-    padding: 20px;
-    z-index: 3;
+    z-index: 2;
+    padding-top: 120px;
 }
 
-.conteudo-banner h1{
-    font-size: 52px;
-    margin-bottom: 20px;
-}
-
-.conteudo-banner p{
-    font-size: 20px;
-    color: #ededed;
-}
-
-/* botão */
 .botao-whatsapp{
     display: inline-block;
-    margin-top: 30px;
-    padding: 16px 28px;
+    margin-top: 20px;
+    padding: 15px 25px;
     background: #00c853;
+    border-radius: 30px;
     color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(0,200,83,0.5);
 }
 
-.botao-whatsapp:hover{
-    transform: scale(1.05);
-}
-/* ANIMAÇÃO RECICLAGEM */
+/* ANIMAÇÃO */
 .animacao-reciclagem{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     text-align: center;
-    z-index: 2;
 }
 
 .sucata{
-    font-size: 32px;
-    font-weight: bold;
-    animation: descer 4s ease-in-out forwards;
-}
-
-.reciclagem{
-    font-size: 80px;
-    opacity: 0;
-    animation: aparecer 6s ease forwards;
-    animation-delay: 4s;
-}
-
-.animacao-reciclagem h2{
-    margin-top: 20px;
-    font-size: 22px;
-    opacity: 0;
-    animation: descer 6s ease-in-out forwards;
-    animation-delay: 8s;
+    font-size: 60px;
+    animation: descer 3s forwards;
 }
 
 .caminho{
     width: 4px;
     height: 180px;
-    margin: 15px auto;
+    margin: 10px auto;
     background: repeating-linear-gradient(
         to bottom,
-        white 0px,
+        white 0,
         white 10px,
         transparent 10px,
         transparent 20px
     );
+    animation: fade 3s forwards;
 }
 
-@keyframes descer{
-    from{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to{
-        transform: translateY(220px);
-        opacity: 0;
-    }
+.reciclagem{
+    font-size: 70px;
+    opacity: 0;
+    animation: aparecer 1.5s forwards;
+    animation-delay: 3s;
 }
 
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
+.animacao-reciclagem h2{
+    opacity: 0;
+    animation: aparecer 1.5s forwards;
+    animation-delay: 4.5s;
 }
-/* SERVIÇOS */
-.servicos{
-    padding: 100px 8%;
+
+/* TABS */
+.tabs{
     text-align: center;
-    background: #202020;
-    position: relative;
 }
 
-.servicos::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("logorrx.png") center/500px no-repeat;
-    opacity: 0.06;
-}
-
-.servicos h2{
-    font-size: 40px;
-    margin-bottom: 50px;
-    color: #00c853;
-    position: relative;
-}
-
-.cards-container{
+.tab-buttons{
     display: flex;
-    gap: 25px;
     justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.card{
-    background: rgba(45,45,45,0.95);
-    padding: 35px;
-    border-radius: 20px;
-    width: 350px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
-}
-
-.card:hover{
-    transform: translateY(-8px);
-}
-
-.materiais-conteudo,
-.servicos-conteudo{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0 10px;
-}
-
-.materiais-conteudo.ativo,
-.servicos-conteudo.ativo{
-    max-height: 2000px;
-    padding: 10px;
-}
-
-.categoria-material{
-    background: rgba(255,255,255,0.05);
-    margin-bottom: 12px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.categoria-material h4{
-    color: #00c853;
-}
-
-.lista-material{
-    margin-top: 8px;
-    padding-left: 15px;
-}
-
-/* SEÇÕES GERAIS */
-.sobre,
-.consciencia,
-.contato{
-    padding: 100px 8%;
-}
-
-.sobre-texto,
-.consciencia-container,
-.contato-container{
-    max-width: 900px;
-    margin: auto;
-}
-
-.sobre h2,
-.consciencia h2,
-.contato h2{
-    color: #00c853;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-/* CONTATO BOTÕES */
-.contato-botoes{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+.tab-buttons button{
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
 }
 
-.contato-btn{
-    padding: 15px 25px;
-    background: rgba(255,255,255,0.06);
+.tab-content{
+    display: none;
+    background: #2a2a2a;
+    padding: 20px;
     border-radius: 10px;
-    color: white;
-    text-decoration: none;
 }
 
-/* FOOTER */
-footer{
-    text-align: center;
-    padding: 50px;
-    background: #181818;
-    border-top: 1px solid rgba(255,255,255,0.08);
+.tab-content.ativo{
+    display: block;
 }
 
-footer h2{
-    color: #00c853;
+/* ANIMAÇÕES */
+@keyframes descer{
+    to{transform: translateY(200px); opacity: 0;}
 }
 
-/* WHATSAPP FIXO */
-.whatsapp-fixo{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #00c853;
-    padding: 15px 22px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
+@keyframes fade{
+    to{opacity: 0;}
 }
 
-/* RESPONSIVO */
-@media(max-width:768px){
-
-    nav{
-        display: none;
-    }
-
-    nav.active{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: #222;
-        padding: 20px;
-    }
-
-    .menu-toggle{
-        display: block;
-    }
-
-    .conteudo-banner h1{
-        font-size: 32px;
-    }
-
-    .conteudo-banner p{
-        font-size: 18px;
-    }
-
-    .card{
-        width: 100%;
-    }
-
-    .contato-botoes{
-        flex-direction: column;
-    }
+@keyframes aparecer{
+    to{opacity: 1;}
 }
