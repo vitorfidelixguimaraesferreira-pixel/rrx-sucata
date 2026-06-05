@@ -77,9 +77,9 @@ nav a:hover{
 .banner{
     height: 100vh;
     background-image: url('banner-rrx.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: 100% 50%;
 }
 .overlay{
     position: absolute;
