@@ -76,17 +76,14 @@ nav a:hover{
 /* BANNER */
 .banner{
     height: 100vh;
-    background: 
-        linear-gradient(rgba(150,150,150,0.4), rgba(150,150,150,0.4)),
-        url('banner-rrx.png');
-    background-size: contain;
+    background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1974&auto=format&fit=crop');
+    background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-
 
 .overlay{
     position: absolute;
@@ -129,7 +126,6 @@ nav a:hover{
 .botao-whatsapp:hover{
     transform: scale(1.05);
 }
-
 /* SERVIÇOS */
 .servicos{
     padding: 100px 8%;
@@ -185,8 +181,7 @@ nav a:hover{
     transform: translateY(-8px);
 }
 
-/* ===== MATERIAIS QUE COMPRAMOS ===== */
-
+/* MATERIAIS */
 .materiais-card h3{
     cursor: pointer;
     display: flex;
@@ -194,7 +189,6 @@ nav a:hover{
     align-items: center;
 }
 
-/* FECHADO */
 .materiais-conteudo{
     max-height: 0;
     overflow: hidden;
@@ -202,13 +196,11 @@ nav a:hover{
     padding: 0 10px;
 }
 
-/* ABERTO */
 .materiais-conteudo.ativo{
     max-height: 2000px;
     padding: 10px;
 }
 
-/* CATEGORIAS */
 .categoria-material{
     background: rgba(255,255,255,0.05);
     margin-bottom: 12px;
@@ -228,7 +220,6 @@ nav a:hover{
     font-size: 18px;
 }
 
-/* LISTA */
 .lista-material{
     margin-top: 8px;
     padding-left: 15px;
@@ -239,8 +230,7 @@ nav a:hover{
     color: #eee;
 }
 
-/* ===== SERVIÇOS PRESTADOS ===== */
-
+/* SERVIÇOS PRESTADOS */
 .servicos-card h3{
     cursor: pointer;
     display: flex;
@@ -248,7 +238,6 @@ nav a:hover{
     align-items: center;
 }
 
-/* FECHADO */
 .servicos-conteudo{
     max-height: 0;
     overflow: hidden;
@@ -256,12 +245,10 @@ nav a:hover{
     padding: 0 10px;
 }
 
-/* ABERTO */
 .servicos-conteudo.ativo{
     max-height: 2000px;
     padding: 10px;
 }
-
 /* SOBRE */
 .sobre{
     padding: 100px 8%;
@@ -290,7 +277,7 @@ nav a:hover{
     font-size: 17px;
 }
 
-/* CONSCIÊNCIA (ENRIQUECIDA) */
+/* CONSCIÊNCIA */
 .consciencia{
     padding: 100px 8%;
     background: #2a2a2a;
@@ -310,7 +297,7 @@ nav a:hover{
     margin-bottom: 20px;
 }
 
-/* CONTATO (CORRIGIDO E BONITO) */
+/* CONTATO */
 .contato{
     padding: 100px 8%;
     text-align: center;
@@ -380,8 +367,8 @@ footer h2{
     padding: 15px 22px;
     border-radius: 50px;
     text-decoration: none;
+    z-index: 999;
 }
-
 /* SCROLL */
 ::-webkit-scrollbar{
     width: 8px;
@@ -392,7 +379,11 @@ footer h2{
     border-radius: 20px;
 }
 
-/* MOBILE */
+::-webkit-scrollbar-track{
+    background: #1a1a1a;
+}
+
+/* RESPONSIVO */
 @media(max-width:768px){
 
     header{
@@ -411,6 +402,8 @@ footer h2{
         top: 80px;
         background: #222;
         padding: 20px;
+        border-radius: 0 0 0 15px;
+        gap: 15px;
     }
 
     .menu-toggle{
@@ -425,7 +418,24 @@ footer h2{
         font-size: 32px;
     }
 
+    .conteudo-banner p{
+        font-size: 18px;
+    }
+
+    .servicos h2,
+    .sobre-texto h2,
+    .consciencia h2,
+    .contato h2{
+        font-size: 30px;
+    }
+
     .contato-botoes{
         flex-direction: column;
+    }
+
+    .whatsapp-fixo{
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 18px;
     }
 }
